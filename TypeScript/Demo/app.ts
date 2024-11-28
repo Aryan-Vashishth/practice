@@ -46,7 +46,7 @@ console.log(arr0);
 // arr0[0] + 1; //This will give an error because the arr in not exclusive for int here
 
 var arr: number[]; //defined datatype of array "arr" to int
-arr    = [1, 2, 3]; 
+arr = [1, 2, 3];
 console.log(arr);
 
 var nestArr = [["hello", 1, 3], [2, 3], ["hello", "world"], "hello world"]; //Nested array: array inside array
@@ -131,7 +131,6 @@ enum Validation {
 }
 
 console.log(Validation.passwordFieldAdvanced);
-
 
 
 
