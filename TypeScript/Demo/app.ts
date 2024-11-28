@@ -1,3 +1,5 @@
+
+
 //--------------------Primitive Data types------------------------------
 
 let x: number;
@@ -168,6 +170,37 @@ console.log((value3 as number) + 1); // Casts `value3` as a number and adds 1 su
 // console.log(value3 + 1);
 
 
+
+
+//------------------------------------Optional Chaining ("Question mark" '?')-------------------------------------------------------
+//                 (allows us to check and deadl with undefined values within Typescript)
+
+const arr1 = [{ name: "tim" }, { name: "joe" }, { name: "ray" }];
+
+const el = arr1.pop(); // ".pop() removes/returns the last element from the array"
+console.log(el);
+
+//const el2 = arr1.pop().name; // this will throw an error as value inside the "name" property of last element/object could possibly be undefined
+
+const el2 = arr1.pop()?.name;
+console.log(el2);
+// The ?. operator checks whether the value before it is null or undefined before trying to access a property or method.
+// If the value is null or undefined, it prevents further access and evaluates to undefined instead of throwing an error.
+// In this case, ?.name safely attempts to access the name property of the object returned by pop().
+
+
+
+
+
+
+
+
+//-------------------------------------------Bang ("Exclamation point" '!')------------------------------------------------------------
+
+const el3 = arr1.pop()!.name;
+// Tells TypeScript to ignore null or undefined checks for the result
+// Only use ! if you can guarantee the value won't be null or undefined.
+console.log(el3);
 
 
 

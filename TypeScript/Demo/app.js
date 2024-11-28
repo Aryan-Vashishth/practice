@@ -1,5 +1,6 @@
 "use strict";
 //--------------------Primitive Data types------------------------------
+var _a;
 let x;
 let y;
 let z;
@@ -94,7 +95,27 @@ else if (typeof value2 == "string") {
 }
 //else { This will also throw an error because type is unknown.
 //    value2--;
-//------------------------------Type Casts---------------------------------------------------------
+//------------------------------Type Casting---------------------------------------------------------
 let value3 = 100;
-console.log(value2 + 1); //casted value2 as number
+// Casting `value3` to a number allows us to safely perform arithmetic operations.
+console.log(value3 + 1); // Casts `value3` as a number and adds 1 successfully.
+// console.log(value3 + 1); would throw an error because `value3` is of type `unknown`
+// and cannot be used in arithmetic operations without "explicit" casting.
+// console.log(value3 + 1);
+//------------------------------------Optional Chaining ("Question mark" '?')-------------------------------------------------------
+//                 (allows us to check and deadl with undefined values within Typescript)
+const arr1 = [{ name: "tim" }, { name: "joe" }, { name: "ray" }];
+const el = arr1.pop(); // ".pop() removes/returns the last element from the array"
+console.log(el);
+//const el2 = arr1.pop().name; // this will throw an error as value inside the "name" property of last element/object could possibly be undefined
+const el2 = (_a = arr1.pop()) === null || _a === void 0 ? void 0 : _a.name;
+console.log(el2);
+// The ?. operator checks whether the value before it is null or undefined before trying to access a property or method.
+// If the value is null or undefined, it prevents further access and evaluates to undefined instead of throwing an error.
+// In this case, ?.name safely attempts to access the name property of the object returned by pop().
+//-------------------------------------------Bang ("Exclamation point" '!')------------------------------------------------------------
+const el3 = arr1.pop().name;
+// Tells TypeScript to ignore null or undefined checks for the result
+// Only use ! if you can guarantee the value won't be null or undefined.
+console.log(el3);
 //# sourceMappingURL=app.js.map
