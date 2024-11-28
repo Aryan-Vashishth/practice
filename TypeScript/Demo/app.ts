@@ -198,7 +198,7 @@ console.log(el2);
 
 const el3 = arr1.pop()!.name;
 // Tells TypeScript to ignore null or undefined checks for the result
-// Only use ! if you can guarantee the value won't be null or undefined.
+// Only use ! if you can guarantee the value won't be null or undefined
 console.log(el3);
 
 
